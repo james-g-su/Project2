@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/search_action"
+        android:title="@string/todo"
+        android:icon="@drawable/search_icon"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"/>
+    <item
+        android:id="@+id/share_action"
+        android:title="@string/todo"
+        android:icon="@drawable/share_icon"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/appBarItem1"
+        android:title="@string/item1"
+        android:icon="@drawable/cut_icon"
+        app:showAsAction="never"/>
+    <item android:id="@+id/appBarItem2"
+        android:title="@string/item2"
+        android:icon="@drawable/settings_icon"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/appBarItem3"
+        android:title="@string/item3"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/appBarItem4"
+        android:title="@string/item4"
+        app:showAsAction="ifRoom"/>
+</menu>

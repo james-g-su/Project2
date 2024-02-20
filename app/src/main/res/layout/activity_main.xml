@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/wtm">
+        <androidx.appcompat.widget.Toolbar
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/main_activity_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/Theme.AppCompat.DayNight"/>
+        <Button
+            android:id="@+id/goMasterDetail"
+            android:text="@string/item1"
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="GoToMasterDetail"/>
+        <Button
+            android:id="@+id/goViewPager"
+            android:text="@string/item2"
+            app:layout_constraintTop_toBottomOf="@id/goMasterDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="GoToViewPager"/>
+        <Button
+            android:id="@+id/goNavigationDrawer"
+            android:text="@string/item3"
+            app:layout_constraintTop_toBottomOf="@id/goViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="GoToNavigationDrawer"/>
+        <Button
+            android:id="@+id/goRandomMovie"
+            android:text="@string/item4"
+            app:layout_constraintTop_toBottomOf="@id/goNavigationDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="GoToRandomMovie"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/main_activity_container"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        app:layout_constraintTop_toBottomOf="@id/goNavigationDrawer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:headerLayout="@layout/header_layout"
+        app:menu="@menu/drawer_menu"
+        />
+</androidx.drawerlayout.widget.DrawerLayout>
